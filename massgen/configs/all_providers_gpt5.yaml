@@ -1,0 +1,54 @@
+agents:
+  - id: "gpt-5"
+    backend:
+      type: "openai"
+      model: "gpt-5"
+      text:
+        verbosity: "low"
+      # reasoning:
+      #   effort: "minimal"
+      # Note: enable_web_search and reasoning cannot be used together
+      enable_web_search: true
+
+  - id: "gemini-2.5-pro"
+    backend:
+      type: "gemini"
+      model: "gemini-2.5-pro"
+      enable_web_search: true
+      # enable_code_execution: true
+
+  - id: "claude-sonnet-4"
+    backend:
+      type: "claude"
+      model: "claude-sonnet-4-20250514"
+      enable_web_search: true
+      enable_code_execution: true
+
+  - id: "grok-4"
+    backend:
+      type: "grok"
+      model: "grok-4"
+      enable_web_search: true
+
+ui:
+  display_type: "rich_terminal"
+  logging_enabled: true
+
+# Optional: Cerebras + Qwen examples
+#
+# - Add a Cerebras agent (OpenAI-compatible Chat Completions):
+#   id: "cerebras-llama"
+#   backend:
+#     type: "chatcompletion"
+#     model: "llama3.1-70b"
+#     base_url: "https://api.cerebras.ai/v1/chat/completions"
+#     provider_name: "Cerebras"
+#
+# - Add a Qwen coder agent via OpenAI-compatible endpoint (example base_url):
+#   id: "qwen-coder"
+#   backend:
+#     type: "chatcompletion"
+#     model: "qwen2.5-coder-32b-instruct"
+#     base_url: "https://api.openrouter.ai/v1/chat/completions"
+#     provider_name: "Qwen"
+

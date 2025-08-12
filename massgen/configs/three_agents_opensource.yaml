@@ -1,0 +1,27 @@
+# MassGen Three Agent Configuration
+# 3 GPT-OSS-120B models
+
+agents:
+  # Cerebras + Qwen + OpenAI demo
+  - id: "cerebras-oss"
+    backend:
+      type: "chatcompletion"
+      model: "gpt-oss-120b"
+      base_url: "https://api.cerebras.ai/v1/chat/completions"
+      provider_name: "Cerebras"
+
+  - id: "qwen-coder"
+    backend:
+      type: "chatcompletion"
+      model: "qwen2.5-coder-32b-instruct"
+      base_url: "https://api.openrouter.ai/v1/chat/completions"
+      provider_name: "Qwen"
+
+  - id: "4omini"
+    backend:
+      type: "openai"
+      model: "gpt-4o-mini"
+ui:
+  display_type: "rich_terminal"
+  logging_enabled: true
+  

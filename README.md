@@ -22,7 +22,7 @@
 
 <p align="center">
   <a href="https://github.com/clinic-of-ai/M3AS">
-    <img src="assets/thumbnail.png" alt="M3AS Demo" width="600">
+    <img src="assets/thumbnail.png" alt="M3AS Demo (update this image to new branding)" width="600">
   </a>
 </p>
 
@@ -65,7 +65,7 @@ This project started with the "threads of thought" and "iterative refinement" id
 - [🧩 Supported Models and Tools](#3--supported-models-and-tools)
   - [Models](#models)
   - [Tools](#tools)
-- [🏃 Run MassGen](#4--run-massgen)
+- [🏃 Run M3AS](#4--run-m3as)
   - [Quick Test with A Single Model](#quick-test-with-a-single-model)
   - [Multiple Agents from Config](#multiple-agents-from-config)
   - [CLI Configuration Parameters](#cli-configuration-parameters)
@@ -111,11 +111,26 @@ This project started with the "threads of thought" and "iterative refinement" id
 
 | Feature | Description |
 |---------|-------------|
-| **🤝 Cross-Model/Agent Synergy** | Harness strengths from diverse providers (OpenAI, Gemini, Claude, Grok, Cerebras, Qwen) |
+| **🤝 Cross-Model/Agent Synergy** | OpenAI (GPT‑5), Google Gemini (2.5), Anthropic Claude (Sonnet 4), xAI Grok (4), Cerebras OSS, Qwen Coder |
 | **⚡ Parallel Processing** | Multiple agents tackle problems simultaneously |
 | **👥 Intelligence Sharing** | Agents share and learn from each other's work |
 | **🔄 Consensus Building** | Natural convergence through collaborative refinement |
-| **📊 Live Visualization** | See agents' working processes in real-time |
+| **📊 Live Visualization** | Rich terminal UI branded as M3AS with vote summaries |
+
+---
+
+## 🔑 Value Propositions & Technical Characteristics
+
+- Multi‑provider orchestration: OpenAI (GPT‑5), Google Gemini, Anthropic Claude, xAI Grok, Cerebras OSS, Qwen Coder in a single run
+- Config‑driven agents: simple YAML defines agents, models, tools, and UI; swap providers without code changes
+- Dual API support: OpenAI Responses API (for GPT‑5 features like `text.verbosity`/`reasoning.effort`) and OpenAI‑compatible Chat Completions (Cerebras/Qwen via `base_url`)
+- Built‑in tool bridge: enables provider tools (web search, code execution/interpreter) and framework functions across API formats
+- Streaming UX with resilience: automatic non‑stream fallback for GPT‑5 when org streaming isn’t verified
+- Automated debate and voting: agents explain choices; tie‑break is deterministic by registration order; results summarized in UI
+- Rich observability: real‑time terminal with branded M3AS header; JSON logs (`mass_coordination_*.json`) for post‑analysis
+- Cost awareness hooks: token estimation and cost calculation paths for providers that expose usage
+- Extensible backends: add any OpenAI‑compatible endpoint by setting `backend: chatcompletion` and a `base_url`
+- Reproducible runs: interactive and single‑shot modes; same configs work in both
 
 ---
 
